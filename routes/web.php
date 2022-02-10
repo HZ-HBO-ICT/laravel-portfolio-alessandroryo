@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/posts/{post}', function ($post) {
-//    $posts = [
-//        'my-first-post' => 'Hello, this is my first blog post!',
-//        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-//    ];
-//
-//    if (!array_key_exists($post, $posts)) {
-//        abort(404, 'Sorry, that post was not found.');
-//    }
-//
-//    return view('post', [
-//        'post' => $posts[$post]
-//    ]);
-//});
-
 Route::get('/', function () {
     return view('index', [
         "title" => "Home"
@@ -35,61 +21,39 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', function () {
-    return view('profile', [
-        "title" => "Profile"
-    ]);
+    return view('profile');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard', [
-        "title" => "Dashboard"
-    ]);
+    return view('dashboard');
 });
 
-Route::get('/faq', function () {
-    return view('faq', [
-        "title" => "FAQ"
-    ]);
-});
+Route::get('/faq', [FaqController::class, 'index']);
 
 Route::get('/blog', function () {
-    return view('blog', [
-        "title" => "Blog"
-    ]);
+    return view('blog');
 });
 
 Route::get('/ict-fow', function () {
-    return view('ict-fow', [
-        "title" => "ICT Field of Work"
-    ]);
+    return view('ict-fow');
 });
 
 Route::get('/skc-feedback', function () {
-    return view('skc-feedback', [
-        "title" => "SKC Feedback"
-    ]);
+    return view('skc-feedback');
 });
 
 Route::get('/prog-exp', function () {
-    return view('prog-exp', [
-        "title" => "Programming Experience"
-    ]);
+    return view('prog-exp');
 });
 
 Route::get('/swot', function () {
-    return view('swot', [
-        "title" => "SWOT"
-    ]);
+    return view('swot');
 });
 
 Route::get('/study-choice', function () {
-    return view('study-choice', [
-        "title" => "Study Choice"
-    ]);
+    return view('study-choice');
 });
 
 Route::get('/others', function () {
-    return view('others', [
-        "title" => "Others"
-    ]);
+    return view('others');
 });
