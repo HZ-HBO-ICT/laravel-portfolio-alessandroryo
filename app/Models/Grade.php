@@ -9,6 +9,12 @@ class Grade extends Model
 {
     use HasFactory;
 
+    /**
+     * Method for add update result column
+     *
+     * @param $number
+     * @return void
+     */
     public function addResult($number)
     {
         if ($number > $this->best_grade) {
