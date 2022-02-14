@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     return view('index', [
-        "title" => "Home"
+        'title' => 'Home',
     ]);
 });
 

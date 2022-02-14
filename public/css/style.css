@@ -29,10 +29,27 @@ nav ul li a {
   text-decoration: none;
   font-size: 1em;
   color: white;
+    transition: 0.3s;
 }
 nav ul li a:hover {
-  color: rgb(106, 255, 135);
+    color: rgb(106, 255, 135);
 }
+
+nav ul .current_page_item a {
+    background: rgb(106, 255, 135);
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: black;
+    transition: 0.3s;
+}
+
+nav ul .current_page_item a:hover {
+    background: white;
+    padding: 5px 30px;
+    border-radius: 20px;
+    color: black;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -694,6 +711,7 @@ span.post-date {
 .others-container li {
   padding-bottom: 30px;
 }
+
 /* Mobile Phone */
 @media screen and (max-width: 576px) {
   .menu-toggle {

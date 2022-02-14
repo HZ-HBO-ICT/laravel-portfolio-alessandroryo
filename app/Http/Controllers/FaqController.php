@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
 use App\Http\Requests\StoreFaqRequest;
 use App\Http\Requests\UpdateFaqRequest;
+use App\Models\Faq;
 
 class FaqController extends Controller
 {
@@ -16,6 +16,7 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::all();
+
         return view('faq', compact('faqs'));
     }
 
