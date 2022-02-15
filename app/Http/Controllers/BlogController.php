@@ -22,7 +22,7 @@ class BlogController extends Controller
     /**
      * Display for every blog article
      *
-     * @param $image_path
+     * @param $image_path image path for each blog slug
      * @return Application|Factory|View in views directory
      */
     public function show($image_path)
