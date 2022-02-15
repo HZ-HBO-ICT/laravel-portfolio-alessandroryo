@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\String_;
 
 class BlogController extends Controller
 {
@@ -23,9 +24,9 @@ class BlogController extends Controller
      * Display for every blog article
      *
      * @param $image_path image path for each blog slug
-     * @return Application|Factory|View in views directory
+     * @return Resources|Views in views directory
      */
-    public function show($image_path)
+    public function show(string $image_path)
     {
         $blogs = Blog::find($image_path);
 
