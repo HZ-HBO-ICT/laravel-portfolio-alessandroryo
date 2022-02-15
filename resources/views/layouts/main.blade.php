@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/style.css?{{ time() }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@400;700&family=Roboto:wght@500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="https://kit.fontawesome.com/42c532e274.js"></script>
 </head>
 <body>
     @include('partials.navbar')

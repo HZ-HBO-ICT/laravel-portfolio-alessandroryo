@@ -475,7 +475,14 @@ footer {
   height: 100%;
   background-color: rgba(221, 221, 221, 0.808);
   position: absolute;
-  left: 0;
+}
+.study-cards-progress-finished {
+    content: '';
+    width: 150px;
+    height: 100%;
+    background-color: rgba(221, 221, 221, 0.808);
+    position: absolute;
+    left: 100%;
 }
 .study-cards-item:last-child {
   margin-bottom: 50px;
@@ -832,7 +839,7 @@ span.post-date {
     width: 60%;
     margin-bottom: 30px;
   }
-  .study-cards-progress, .nbsa-study-cards-progress {
+  .study-cards-progress, .nbsa-study-cards-progress, .study-cards-progress-finished {
     background: rgb(106, 255, 135);
     width: 100%;
     height: auto;
@@ -841,13 +848,13 @@ span.post-date {
     overflow: hidden;
     margin-top: 5px;
   }
-  .study-cards-progress::after, .nbsa-study-cards-progress::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: rgba(221, 221, 221, 0.808);
-    position: absolute;
-    left: 0;
+  .study-cards-progress::after, .nbsa-study-cards-progress::after, .study-cards-progress-finished::after {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background-color: rgba(221, 221, 221, 0.808);
+   position: absolute;
+   left: 0;
   }
   .study-cards-info {
     display: flex;

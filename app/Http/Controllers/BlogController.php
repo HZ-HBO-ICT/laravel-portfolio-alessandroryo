@@ -23,10 +23,10 @@ class BlogController extends Controller
     /**
      * Display for every blog article
      *
-     * @param $image_path image path for each blog slug
+     * @param $image_path = image path for each blog slug
      * @return Resources|Views in views directory
      */
-    public function show(string $image_path)
+    public function show($image_path)
     {
         $blogs = Blog::find($image_path);
 

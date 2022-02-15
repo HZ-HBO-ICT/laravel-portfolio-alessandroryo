@@ -4,8 +4,6 @@
         <p>This is my showcase website</p>
         <ul class="social-media">
             <li><a href="https://www.instagram.com/alessandroryo/"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="https://line.me/ti/p/bA4_EDgesf"><i class="fab fa-line"></i></a></li>
-            <li><a href="https://discordapp.com/users/alessandroryo/"><i class="fab fa-discord"></i></a></li>
             <li><a href="https://www.linkedin.com/in/alessandro-ryo-877aa5173/"><i class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </article>
