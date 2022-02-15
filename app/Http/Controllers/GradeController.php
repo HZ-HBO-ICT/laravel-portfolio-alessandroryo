@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
-use Controller;
 
 class GradeController extends Controller
 {

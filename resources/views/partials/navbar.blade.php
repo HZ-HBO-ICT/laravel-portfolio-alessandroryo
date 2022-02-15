@@ -1,6 +1,6 @@
 <nav>
     <figure class="main-logo">
-        <a href="/"><img src="img/main-logo.png" alt="Alessandro Ryo logo"></a>
+        <a href="/"><img src="/img/main-logo.png" alt="Alessandro Ryo logo"></a>
     </figure>
     <ul>
         <li class="{{ Request::path() === '/' ? 'current_page_item' : ''}}"><a href="/">Home</a></li>

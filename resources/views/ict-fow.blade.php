@@ -18,7 +18,7 @@
             security, and working with customer requirements.
             Companies that need this profession are Walmart, IBM, SAP, Paypal.</p>
         <figure>
-            <img class="ict-fow-image" src="img/full-stack-developer.png">
+            <img class="ict-fow-image" src="/img/full-stack-developer.png">
             <figcaption>geeksforgeeks.com</figcaption>
         </figure>
     </article>
@@ -30,7 +30,7 @@
             business perspective. Companies that need this profession are Amazon, Netflix, Google,
             Instagram, and Facebook.</p>
         <figure>
-            <img class="ict-fow-image" src="img/data-scientist.png">
+            <img class="ict-fow-image" src="/img/data-scientist.png">
             <figcaption>ictcareer.com</figcaption>
         </figure>
     </article>
@@ -42,7 +42,7 @@
             monitoring tools, encryption tools, and risk management. Companies that need this profession
             are GE, Amazon, Visa, and Huawei.</p>
         <figure>
-            <img class="ict-fow-image" src="img/cyber-security.png">
+            <img class="ict-fow-image" src="/img/cyber-security.png">
             <figcaption>freepik.com</figcaption>
         </figure>
     </article>
