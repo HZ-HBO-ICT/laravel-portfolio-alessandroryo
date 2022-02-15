@@ -19,6 +19,10 @@ class BlogController extends Controller
         return view('blog', compact('blogs'));
     }
 
+    /**
+     * @param $image_path
+     * @return Application|Factory|View in views directory
+     */
     public function show($image_path)
     {
         $blogs = Blog::find($image_path);
