@@ -20,6 +20,8 @@ class BlogController extends Controller
     }
 
     /**
+     * Display for every blog article
+     *
      * @param $image_path
      * @return Application|Factory|View in views directory
      */
