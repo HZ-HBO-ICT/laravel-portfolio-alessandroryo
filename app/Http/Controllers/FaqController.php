@@ -21,16 +21,25 @@ class FaqController extends Controller
         return view('faq', compact('faqs'));
     }
 
+    /**
+     * @return void
+     */
     public function show()
     {
-
+        //
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function create()
     {
         return view('faq-create');
     }
 
+    /**
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store()
     {
         $faqs = new Faq();
@@ -41,6 +50,9 @@ class FaqController extends Controller
         return redirect('/faq');
     }
 
+    /**
+     * @return Application|Factory|View
+     */
     public function edit()
     {
         $faqs = Faq::all();
@@ -48,13 +60,19 @@ class FaqController extends Controller
         return view('faq-list', compact('faqs'));
     }
 
+    /**
+     * @return void
+     */
     public function update()
     {
-
+        //
     }
 
+    /**
+     * @return void
+     */
     public function destroy()
     {
-
+        //
     }
 }
