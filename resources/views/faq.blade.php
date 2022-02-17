@@ -4,6 +4,7 @@
 <main>
     <section class="faq">
         <h1>Frequently Asked Questions</h1>
+        <h3><a href="/faq/edit">Edit FAQ</a></h3>
         <div class="faq-container">
             <div class="faq-accordion">
                 @foreach($faqs as $faq)

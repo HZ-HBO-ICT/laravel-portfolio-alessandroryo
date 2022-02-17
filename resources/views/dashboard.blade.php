@@ -72,7 +72,7 @@
         </article>
 
 {{--        Dynamic--}}
-        @foreach($dashboard as $grade)
+        @foreach($grades as $grade)
             <article class="study-quartile">
                 <h1>&#8226; Quartile {{ $grade->quartile }} &#8226;</h1>
                 <section class="study-cards">
@@ -81,9 +81,7 @@
                             <h2>{{ $grade->course_name }}</h2>
                             <p><b>{{ $grade->ec }}</b> EC</p>
                             <p>{{ $grade->test_name }}</p>
-                            <div>
-                                <span class="study-cards-progress"></span>
-                            </div>
+                            <div class="{{ $grade->best_grade > 0 ? 'study-cards-progress-finished' : 'study-cards-progress'}}"></div>
                         </article>
                         <h2 class="study-class-percentage">{{ $grade->best_grade }}</h2>
                     </div>

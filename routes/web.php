@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,13 +26,19 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [GradeController::class, 'index']);
 
 Route::get('/faq', [FaqController::class, 'index']);
 
-Route::get('/blog', [BlogController::class, 'index']);
+Route::post('/faq', [FaqController::class, 'store']);
 
-Route::get('/blog/{blog}', [BlogController::class, 'show']);
+Route::get('/faq/create', [FaqController::class, 'create']);
+
+Route::get('/faq/edit', [FaqController::class, 'edit']);
+
+Route::get('/blog', [ArticleController::class, 'index']);
+
+Route::get('/blog/{blog}', [ArticleController::class, 'show']);
 
 Route::get('/others', function () {
     return view('others');

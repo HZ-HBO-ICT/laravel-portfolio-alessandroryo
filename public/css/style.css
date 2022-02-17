@@ -429,6 +429,98 @@ footer {
   margin-bottom: 30px;
   font-size: 50px;
 }
+.faq h3, .faq h3 a, .faq-edit h3, .faq-edit h3 a {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: black;
+}
+.faq h3 a,.faq-edit h3 a{
+    background: rgb(106, 255, 135);
+    padding: 5px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.faq h3 a:hover, .faq-edit h3 a:hover {
+    background: white;
+}
+.faq-table {
+    width: 90%;
+    margin-bottom: 30px;
+}
+.faq-table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+}
+.faq-table th {
+    background: white;
+    color: black;
+}
+.faq-create, .faq-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.faq-create h1, .faq-edit h1 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+.faq-create-form {
+    width: 300px;
+    align-items: center;
+}
+.faq-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.faq-create-form label {
+    font-size: 30px;
+}
+.faq-create-form input {
+    font-family: Poppins;
+    width: 200px;
+}
+.faq-create-form textarea {
+    resize: none;
+    width: 200px;
+    height: 200px;
+    font-family: Poppins;
+}
+.faq-create-form .submit {
+    background: rgb(106, 255, 135);
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Poppins Medium";
+    transition: 0.3s;
+}
+.faq-create-form .submit:hover {
+     background: white;
+ }
+.faq-td-desc a {
+    background: white;
+    text-decoration: none;
+    color: black;
+}
 .dashboard-page {
   background-image: url(../img/study-pattern.png);
   margin-top: 0;
@@ -460,7 +552,7 @@ footer {
   height: 100%;
   width: auto;
 }
-.study-cards-progress, .nbsa-study-cards-progress {
+.study-cards-progress, .nbsa-study-cards-progress, .study-cards-progress-finished {
   background: rgb(106, 255, 135);
   width: 150px;
   height: 30px;
@@ -470,13 +562,15 @@ footer {
   margin-top: 15px;
 }
 .study-cards-progress::after, .nbsa-study-cards-progress::after {
-  content: '';
-  width: 150px;
-  height: 100%;
-  background-color: rgba(221, 221, 221, 0.808);
-  position: absolute;
+    content: '';
+    width: 150px;
+    height: 100%;
+    background-color: rgba(221, 221, 221, 0.808);
+    position: absolute;
+    left: 0%;
 }
-.study-cards-progress-finished {
+
+.study-cards-progress-finished::after {
     content: '';
     width: 150px;
     height: 100%;
@@ -854,7 +948,6 @@ span.post-date {
    height: 100%;
    background-color: rgba(221, 221, 221, 0.808);
    position: absolute;
-   left: 0;
   }
   .study-cards-info {
     display: flex;

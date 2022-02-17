@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BlogFactory extends Factory
+class ArticleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,8 +16,9 @@ class BlogFactory extends Factory
         return [
             'title'=> $this->faker->sentence(mt_rand(2, 4)),
             'excerpt'=> $this->faker->sentence(mt_rand(4, 10)),
-            'image_path' => 'ict-fow',
-            'image_alt' => $this->faker->sentence(3)
+            'image_path' => 'https://picsum.photos/seed/picsum/300',
+            'image_alt' => $this->faker->word(),
+            'slug' => $this->faker->sentence(1)
         ];
     }
 }

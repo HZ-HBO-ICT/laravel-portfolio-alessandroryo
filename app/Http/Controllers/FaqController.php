@@ -20,4 +20,41 @@ class FaqController extends Controller
 
         return view('faq', compact('faqs'));
     }
+
+    public function show()
+    {
+
+    }
+
+    public function create()
+    {
+        return view('faq-create');
+    }
+
+    public function store()
+    {
+        $faqs = new Faq();
+        $faqs->question = request('question');
+        $faqs->answer = request('answer');
+        $faqs->save();
+
+        return redirect('/faq');
+    }
+
+    public function edit()
+    {
+        $faqs = Faq::all();
+
+        return view('faq-list', compact('faqs'));
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
+    }
 }
