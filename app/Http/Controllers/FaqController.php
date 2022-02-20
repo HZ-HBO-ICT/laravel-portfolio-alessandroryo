@@ -37,9 +37,6 @@ class FaqController extends Controller
         return view('faq-create');
     }
 
-    /**
-     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
     public function store()
     {
         $faqs = new Faq();
@@ -50,29 +47,31 @@ class FaqController extends Controller
         return redirect('/faq');
     }
 
-    /**
-     * @return Application|Factory|View
-     */
-    public function edit()
+    public function edit($id)
     {
-        $faqs = Faq::all();
+        $faq = Faq::find($id);
 
-        return view('faq-list', compact('faqs'));
+        return view('/faq-edit', compact('faq'));
+    }
+
+    public function update($id)
+    {
+        $faq = Faq::find($id);
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+        $faq->save();
+
+        return redirect('/faq');
     }
 
     /**
      * @return void
      */
-    public function update()
+    public function destroy($id)
     {
-        //
-    }
+        $faq = Faq::find($id);
+        $faq->delete();
 
-    /**
-     * @return void
-     */
-    public function destroy()
-    {
-        //
+        return redirect('/faq');
     }
 }
