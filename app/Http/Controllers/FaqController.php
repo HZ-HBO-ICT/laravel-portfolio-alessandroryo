@@ -37,6 +37,9 @@ class FaqController extends Controller
         return view('faq-create');
     }
 
+    /**
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store()
     {
         $faqs = new Faq();
@@ -47,6 +50,10 @@ class FaqController extends Controller
         return redirect('/faq');
     }
 
+    /**
+     * @param $id
+     * @return Application|Factory|View
+     */
     public function edit($id)
     {
         $faq = Faq::find($id);
@@ -54,6 +61,10 @@ class FaqController extends Controller
         return view('/faq-edit', compact('faq'));
     }
 
+    /**
+     * @param $id
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update($id)
     {
         $faq = Faq::find($id);
