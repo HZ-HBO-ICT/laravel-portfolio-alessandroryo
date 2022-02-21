@@ -29,17 +29,18 @@ Route::get('/profile', function () {
 Route::get('/dashboard', [GradeController::class, 'index']);
 
 // FAQ Page
-Route::resource('/faq', FaqController::class)->only(
-    ['index', 'store', 'create', 'edit', 'update', 'destroy']
+Route::resource('/faq', FaqController::class)->except(
+    ['show', 'destroy']
 );
 // Exception for delete faq, because it doesn't have a single page for each faq
 Route::get('/faq/{id}', [FaqController::class, 'destroy']);
 
 // Blog Page
+Route::resource('/blog', ArticleController::class)->except(
+    ['destroy', 'show']
+);
 
-Route::get('/blog', [ArticleController::class, 'index']);
-
-Route::get('/blog/{blog}', [ArticleController::class, 'show']);
+Route::get('/blog/{article}', [ArticleController::class, 'show'])->name('blog-show');
 
 // Others Page
 

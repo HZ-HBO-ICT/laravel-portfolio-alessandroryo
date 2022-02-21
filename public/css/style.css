@@ -429,7 +429,7 @@ footer {
   margin-bottom: 30px;
   font-size: 50px;
 }
-.faq h3, .faq h3 a, .faq-edit h3, .faq-edit h3 a {
+.faq h3, .faq h3 a, .faq-edit h3, .faq-edit h3 a, .post-title h3, .post-title h3 a {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -438,13 +438,13 @@ footer {
     text-decoration: none;
     color: black;
 }
-.faq h3 a,.faq-edit h3 a{
+.faq h3 a,.faq-edit h3 a, .post-title h3 a {
     background: rgb(106, 255, 135);
     padding: 5px 20px;
     border-radius: 20px;
     transition: 0.3s;
 }
-.faq h3 a:hover, .faq-edit h3 a:hover {
+.faq h3 a:hover, .faq-edit h3 a:hover, .post-title h3 a:hover {
     background: white;
 }
 .faq-create, .faq-edit {
@@ -503,11 +503,6 @@ footer {
 .faq-create-form .submit:hover {
      background: white;
  }
-.faq-td-desc a {
-    background: white;
-    text-decoration: none;
-    color: black;
-}
 .faq-action {
     margin-top: 10px;
 }

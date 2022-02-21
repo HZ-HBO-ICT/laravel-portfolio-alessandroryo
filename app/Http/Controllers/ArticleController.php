@@ -21,15 +21,78 @@ class ArticleController extends Controller
     }
 
     /**
-     * Display for every article
-     *
-     * @param $article_slug = uri slug for each article
-     * @return Resources|Views in views directory
+     * @param Article $article
+     * @return \Illuminate\Contracts\View\View
      */
-    public function show($article_slug)
+    public function show(Article $article)
     {
-        $articles = Article::find($article_slug);
+        return view('blog-show', compact('article'));
+    }
 
-        return view($article_slug, ['articles' => $articles]);
+    /**
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function create()
+    {
+        return view('blog-create');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        Article::create($this->getValidateArticle($request));
+
+        return redirect(route('blog'));
+    }
+
+    /**
+     * @param Article $article
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function edit(Article $article)
+    {
+        return view('blog-edit', compact('article'));
+    }
+
+    /**
+     * @param Article $article
+     * @param Request $request
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function update(Article $article, Request $request)
+    {
+        $article->update($this->getValidateArticle($request));
+
+        return redirect($article->path());
+//        return redirect('/blog', $article->id);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function destroy($id)
+    {
+        $article = Faq::find($id);
+        $article->delete();
+
+        return redirect('blog');
+    }
+
+    /**
+     * @return array
+     */
+    public function getValidateArticle($request): array
+    {
+        return $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'image_path' => 'required',
+            'image_alt' => 'required'
+        ]);
     }
 }

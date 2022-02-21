@@ -6,6 +6,7 @@ use App\Models\Faq;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
@@ -40,12 +41,9 @@ class FaqController extends Controller
     /**
      * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store()
+    public function store(Request $request)
     {
-        $faqs = new Faq();
-        $faqs->question = request('question');
-        $faqs->answer = request('answer');
-        $faqs->save();
+        Faq::create($this->getValidateFAQ($request));
 
         return redirect('/faq');
     }
@@ -54,10 +52,8 @@ class FaqController extends Controller
      * @param $id
      * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         return view('/faq-edit', compact('faq'));
     }
 
@@ -65,12 +61,9 @@ class FaqController extends Controller
      * @param $id
      * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id)
+    public function update(Faq $faq, Request $request)
     {
-        $faq = Faq::find($id);
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->save();
+        $faq->update($this->getValidateFAQ($request));
 
         return redirect('/faq');
     }
@@ -84,5 +77,16 @@ class FaqController extends Controller
         $faq->delete();
 
         return redirect('/faq');
+    }
+
+    /**
+     * @return array
+     */
+    public function getValidateFAQ($request): array
+    {
+        return $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
     }
 }

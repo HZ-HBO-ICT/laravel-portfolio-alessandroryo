@@ -4,6 +4,7 @@
 <main class="post-container">
     <article class="post-title">
         <h1>My Blog</h1>
+        <h3><a href="/faq/create">Create FAQ</a></h3>
     </article>
     <div class="post-column-card">
         @foreach($articles as $article)
@@ -16,7 +17,7 @@
                     <h3>{{ $article->title }}</h3>
                     <p>{{ $article->excerpt }}</p>
                     <span class="post-breaker"></span><br>
-                    <a href="/blog/{{ $article->slug }}">Read More &#8594;</a>
+                    <a href="{{ $article->path() }}">Read More &#8594;</a>
                 </article>
             </div>
         @endforeach

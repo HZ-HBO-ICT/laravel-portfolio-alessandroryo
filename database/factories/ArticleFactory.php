@@ -16,9 +16,9 @@ class ArticleFactory extends Factory
         return [
             'title'=> $this->faker->sentence(mt_rand(2, 4)),
             'excerpt'=> $this->faker->sentence(mt_rand(4, 10)),
+            'body' => $this->faker->paragraph(),
             'image_path' => 'https://picsum.photos/seed/picsum/300',
             'image_alt' => $this->faker->word(),
-            'slug' => $this->faker->sentence(1)
         ];
     }
 }
