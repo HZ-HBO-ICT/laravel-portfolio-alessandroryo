@@ -92,6 +92,12 @@ class GradeController extends Controller
         return redirect(route('grades.index'));
     }
 
+    /**
+     * Method for validate user input
+     *
+     * @param $request
+     * @return mixed
+     */
     public function getValidateGrade($request)
     {
         return $request->validate([
