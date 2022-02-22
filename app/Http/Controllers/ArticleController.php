@@ -20,7 +20,7 @@ class ArticleController extends Controller
         return view('blog', compact('articles'));
     }
 
-    /**
+    /**php php-cs-fixer.phar
      * @param Article $article
      * @return \Illuminate\Contracts\View\View
      */
@@ -92,7 +92,7 @@ class ArticleController extends Controller
             'excerpt' => 'required',
             'body' => 'required',
             'image_path' => 'required',
-            'image_alt' => 'required'
+            'image_alt' => 'required',
         ]);
     }
 }

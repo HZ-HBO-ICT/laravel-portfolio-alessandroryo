@@ -9,6 +9,8 @@ class Grade extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['quartile', 'course_name', 'ec', 'test_name', 'lowest_passing_grade'];
+
     /**
      * Method for add update result column
      *

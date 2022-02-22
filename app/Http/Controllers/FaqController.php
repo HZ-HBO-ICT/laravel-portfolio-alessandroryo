@@ -86,7 +86,7 @@ class FaqController extends Controller
     {
         return $request->validate([
             'question' => 'required',
-            'answer' => 'required'
+            'answer' => 'required',
         ]);
     }
 }

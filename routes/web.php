@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\GradeController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +26,14 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+// Dashboard Page
 Route::get('/dashboard', [GradeController::class, 'index']);
+Route::post('/dashboard', [GradeController::class, 'store'])->name('grades.index');
+Route::get('/dashboard/create', [GradeController::class, 'create']);
+Route::get('/dashboard/{grade}', [GradeController::class, 'show']);
+Route::get('/dashboard/{grade}/edit', [GradeController::class, 'edit']);
+Route::put('/dashboard/{grade}', [GradeController::class, 'update']);
+Route::delete('/dashboard/{grade}', [GradeController::class, 'delete']);
 
 // FAQ Page
 Route::resource('/faq', FaqController::class)->except(
