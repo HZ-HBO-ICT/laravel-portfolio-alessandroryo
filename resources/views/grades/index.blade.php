@@ -14,7 +14,7 @@
                 <thead>
                 <tr>
                     <th><abbr title="Number">No.</abbr></th>
-                    <th>Quartile</th>
+                    <th>CU Code</th>
                     <th>Course Name</th>
                     <th>EC</th>
                     <th>Test Name</th>
@@ -28,9 +28,9 @@
                 @foreach($grades as $grade)
                     <tr>
                         <th>{{ $grade->id }}</th>
-                        <td>{{ $grade->quartile }}</td>
-                        <td>{{ $grade->course_name }}</td>
-                        <td>{{ $grade->ec }}</td>
+                        <td>{{ $grade->CU_code }}</td>
+                        <td>{{ $grade->name }}</td>
+                        <td>{{ $grade->credits }}</td>
                         <td>{{ $grade->test_name }}</td>
                         <td>{{ $grade->lowest_passing_grade }}</td>
                         <td>{{ $grade->best_grade }}</td>

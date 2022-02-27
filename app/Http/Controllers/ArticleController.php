@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\String_;
 
 class ArticleController extends Controller
 {
@@ -20,7 +19,7 @@ class ArticleController extends Controller
         return view('blog', compact('articles'));
     }
 
-    /**php php-cs-fixer.phar
+    /*php php-cs-fixer.phar
      * @param Article $article
      * @return \Illuminate\Contracts\View\View
      */
@@ -38,7 +37,6 @@ class ArticleController extends Controller
     }
 
     /**
-     * @param Request $request
      * @return \Illuminate\Routing\Redirector
      */
     public function store(Request $request)
@@ -49,7 +47,6 @@ class ArticleController extends Controller
     }
 
     /**
-     * @param Article $article
      * @return \Illuminate\Contracts\View\View
      */
     public function edit(Article $article)
@@ -58,8 +55,6 @@ class ArticleController extends Controller
     }
 
     /**
-     * @param Article $article
-     * @param Request $request
      * @return \Illuminate\Routing\Redirector
      */
     public function update(Article $article, Request $request)
@@ -72,6 +67,7 @@ class ArticleController extends Controller
 
     /**
      * @param $id
+     *
      * @return \Illuminate\Routing\Redirector
      */
     public function destroy($id)
@@ -83,7 +79,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * @return array
+     * @param mixed $request
      */
     public function getValidateArticle($request): array
     {

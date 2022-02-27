@@ -19,11 +19,20 @@ class Grade extends Model
      */
     public function addResult($number)
     {
-        if ($number > $this->best_grade) {
-            $this->best_grade = $number;
-            if ($this->best_grade >= $this->lowest_passing_grade) {
-                $this->passed_at = now();
+        if ($number >= $this->lowest_passing_grade) {
+            if ($this->best_grade == null) {
+                $course = Course::find('id', '=', $this->course_id);
+                $course->assignCredits();
+                $this->best_grade = $number;
             }
         }
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Course::class);
     }
 }
