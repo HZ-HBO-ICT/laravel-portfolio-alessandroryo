@@ -10,6 +10,8 @@ class Course extends Model
     use HasFactory;
 
     /**
+     * Method for Course has many Grades
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function grades()
@@ -17,13 +19,13 @@ class Course extends Model
         return $this->hasMany(Grade::class);
     }
 
+    /**
+     * Change passed date
+     *
+     * @return void
+     */
     public function assignCredits()
     {
         $this->passed_at = now();
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 }
